@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ISKCON Temple - Details & Transport</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffdfa;
+      color: #2b1914;
+      margin: 0;
+      padding: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .temple-img {
+      display: block;
+      margin: 0 auto 18px;
+      max-width: 340px;
+      border-radius: 14px;
+      box-shadow: 0 3px 15px #eadfc6;
+    }
+    .desc-block {
+      margin-bottom: 26px;
+      line-height: 1.6;
+    }
+    .desc-section {
+      margin-bottom: 16px;
+    }
+    .desc-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #4e270d;
+    }
+    img.static-map {
+      width: 100%;
+      height: 450px;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px #ccc;
+      display: block;
+      margin: 0 auto 24px;
+    }
+    .transport-icons {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+    .transport-icons a {
+      text-decoration: none;
+      color: #50260f;
+      text-align: center;
+      font-size: 0.9rem;
+      width: 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .transport-icons a:hover {
+      transform: translateY(-6px);
+      color: #b36800;
+    }
+    .transport-icons img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 6px;
+    }
+    @media (max-width: 600px) {
+      .transport-icons {
+        gap: 16px;
+      }
+      .transport-icons a {
+        width: 55px;
+        font-size: 0.8rem;
+      }
+      .transport-icons img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>ISKCON Temple</h1>
+  <img
+    src="images/iskcon.jpg"
+    alt="ISKCON Temple"
+    class="temple-img"
+  />
+
+  <div class="desc-block">
+    <div class="desc-section">
+      <div class="desc-title">History:</div>
+      <div>
+        The ISKCON (International Society for Krishna Consciousness) Temples are dedicated to Lord Krishna, founded in 1966 by A.C. Bhaktivedanta Swami Prabhupada.
+        The temples follow Gaudiya Vaishnavism tradition and have spread worldwide, with prominent centers in India such as Delhi, Vrindavan, and Bangalore.
+      </div>
+    </div>
+
+    <div class="desc-section">
+      <div class="desc-title">Puja Rituals:</div>
+      <div>
+        Daily worship includes elaborate kirtans (devotional singing), arti ceremonies, and offering prasadam (sanctified food) to Lord Krishna.
+        Devotees engage in chanting the Hare Krishna mantra and spiritual discourses.
+      </div>
+    </div>
+
+    <div class="desc-section">
+      <div class="desc-title">Festivals Celebrated:</div>
+      <div>
+        Janmashtami (Krishna’s birthday) is the grandest festival celebrated with dance, music, theatrical plays, and night-long celebrations.
+        Other major festivals include Radhashtami, Gaura Purnima, and Holi.
+      </div>
+    </div>
+  </div>
+
+  <img
+    src="images/iskcon.jpeg"
+    alt="ISKCON Temple Location on Map"
+    class="static-map"
+  />
+
+  <div class="transport-icons">
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=ISKCON+Temple+India&travelmode=transit"
+      target="_blank"
+      title="Bus and Train"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2991/2991143.png"
+        alt="Bus Train Icon"
+      />
+      Bus/Train
+    </a>
+
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=ISKCON+Temple+India&travelmode=driving"
+      target="_blank"
+      title="Drive"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+        alt="Drive Icon"
+      />
+      Drive
+    </a>
+
+    <a
+      href="https://www.google.com/flights?hl=en#flt=DEL-BLR"
+      target="_blank"
+      title="Flight"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2972/2972126.png"
+        alt="Flight Icon"
+      />
+      Flight
+    </a>
+  </div>
+</body>
+</html>
