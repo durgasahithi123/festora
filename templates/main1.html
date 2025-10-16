@@ -1,0 +1,289 @@
+<html>
+    <head>
+        <title>hackathon</title>
+        <style>
+            h1 {
+                text-align: center;
+                font-family: cursive;
+            }
+            ul {
+                background-color: beige;
+                padding: 0;
+                overflow: hidden;
+                margin: 0;
+                list-style-type: none;
+                display: flex;
+            }
+            li {
+                padding: 10px;
+            }
+            .topnav {
+                list-style-type: none;
+                display: flex;
+                float: right;
+                padding-left:1030px;
+            }
+            .slideshow-container {
+                position: relative;
+                max-width: 1600px;
+                width: 90%;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+                margin: 20px;
+                justify-self: center;
+                
+            }
+
+            .mySlides {
+                display: none;
+            }
+
+            .mySlides img {
+                width: 1600px;
+                height: 570px;
+                object-fit:fill;
+                
+            }
+
+             /* Buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 14px;
+                color: white;
+                font-weight: bold;
+                font-size: 22px;
+                border-radius: 50%;
+                background: rgba(0,0,0,0.6);
+                user-select: none;
+            }
+ 
+            .next { right: 10px; }
+            .prev { left: 10px; }
+
+            .festivemonth {
+                text-align: left;
+                font-family: arial;
+            }
+            .container {
+                display: flex;
+                align-items: right;
+                justify-content: flex-start;
+                max-width: 100%;
+                padding: 20px;
+                margin: 10px auto;
+                border: 1px;
+                flex-direction: column;
+
+            }
+            .container img {
+                max-width: 400px;
+                margin-right: 20px;
+                border-radius: 8px;
+            }
+            .container h3 {
+                margin:  0 0 10px 0;
+               
+            }
+            .container p {
+                margin: 0;
+                font-size: 15px;
+                line-height: 1.4;
+                
+            }
+
+            
+            
+            .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px 40px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #0003;
+}
+
+.icons {
+  margin: 20px 0;
+}
+
+.icon {
+  width: 50px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+        </style>
+    </head>
+    <body>
+        <h1>Celebrating India's Heritage-from Temples to Traditions</h1>
+    
+        <nav>
+            <ul>
+                <li><a style="text-decoration:none;color:black;" href="/html/main1.html">Home</a></li>
+                
+                <li><a style="text-decoration:none;color:black;" href="calender.html">Calender</a></li>
+                <li><a style="text-decoration:none;color:black;" href="/html/books.html">Books</a></li>
+                <div class="topnav">
+                    <li><a style="text-decoration:none;color:black;" href="/html/login.html">Login</a></li>
+                    <li><a style="text-decoration:none;color:black;" href="/html/signup.html">Signup</li>
+                </div>
+                
+            </ul>
+        </nav>
+        <div class="slideshow-container">
+
+            <!-- Slide 1 -->
+            <div class="mySlides">
+              <a href="/html/temples.html"><img src="images/temples.jpeg" alt="Temple"></a> 
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="mySlides">
+               <a href="/html/dance.html"><img src="images/dance (2).jpeg" alt="Dance"></a>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="mySlides">
+              <a href="/html/festivals.html"><img src="images/festivals.jpeg" alt="Festival"></a> 
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="mySlides">
+               <a href="/html/food.html"><img src="images/food.jpeg" alt="Food"></a> 
+            </div>
+
+            <!-- Buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <script>
+          let slideIndex = 0;
+          let autoSlide; // store interval
+
+            showSlides();
+
+            // Show specific slide when buttons clicked
+            function plusSlides(n) {
+                clearInterval(autoSlide); // stop auto when clicked
+                slideIndex += n;
+                showSlides();
+                autoSlide = setInterval(() => showSlides(1), 4000); // restart auto
+            }
+
+            // Show slides function
+            function showSlides(n) {
+                let slides = document.getElementsByClassName("mySlides");
+
+            // If manual navigation
+            if (n !== undefined) {
+              slideIndex = slideIndex + n;
+            }
+
+            if (slideIndex >= slides.length) { slideIndex = 0 }
+            if (slideIndex < 0) { slideIndex = slides.length - 1 }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex].style.display = "block";
+            }
+
+            // Auto slide every 4 seconds
+            autoSlide = setInterval(() => showSlides(1), 4000);
+            document.addEventListener("DOMContentLoaded", function() {
+  let popup = document.getElementById('loginSignupPopup');
+  let closeBtn = document.getElementById('closePopup');
+  let popupShown = false;
+
+  // Show popup after 2 minutes
+  let timer = setTimeout(() => {
+    if (!popupShown) {
+      popup.style.display = 'flex';
+      popupShown = true;
+    }
+  }, 120000); // 2 minutes in milliseconds
+
+  // Detect exit intent - mouse moving near top of viewport (to close or switch tab)
+  document.addEventListener('mouseout', function(e) {
+    if (e.clientY < 50 && !popupShown) {
+      popup.style.display = 'flex';
+      popupShown = true;
+      clearTimeout(timer); // Cancel timer if exit popup shown early
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+});
+            
+
+        </script>
+        <br><br>
+        <h1 class="festivemonth">Festival of the month</h1>
+        <div class="container">
+            <h3>Onam (August 26 – September 5, 2025; Thiruvonam: September 5)</h3>
+            
+            <p>Onam is Kerala’s grand harvest festival celebrated over ten days, culminating on Thiruvonam. 
+            Families welcome the legendary King Mahabali with vibrant floral rangoli (Pookalam), grand feasts (Onasadya), traditional games, and cultural dances. 
+            The festival highlights unity, joy, and prosperity across the state, with the main festivities falling on September 5.
+            </p>
+           <a href="/html/onam.html"><img src="images/onam.jpg" ></a> 
+            
+        </div><br>
+        <div class="container">
+            <h3>Ganesh Visarjan (September 6, 2025)</h3>
+            <p>Ganesh Visarjan marks the farewell of Lord Ganesha at the end of Ganesh Chaturthi. 
+            Devotees immerse Ganesha idols in rivers, lakes, or seas with singing and dancing processions, symbolizing gratitude and the cycle of creation and dissolution.</p>
+            <a href="/html/ganeshvisarjan.html"><img src="images/ganesh.jpg"></a> 
+        </div>
+        <br>
+        <div class="container">
+            <h3>Shardiya Navratri (Beginning September 22, 2025)</h3>
+            <p>Shardiya Navratri is a nine-day festival dedicated to Goddess Durga. 
+            It starts with Ghatasthapana and features fasting, prayers, and dance, culminating in Durga Ashtami and Sandhi Puja. 
+            The festival symbolizes the victory of good over evil and is celebrated with devotion and community gatherings.</p>
+            <a href="/html/navaratri.html"><img src="images/navaratri.jpg"></a> 
+        </div>
+        <div id="loginSignupPopup" class="popup-overlay" style="display:none;">
+            <div class="popup-content">
+               <h2>Welcome!</h2>
+               <div class="icons">
+               <a href="/html/login.html" title="Login"><img src="https://static.vecteezy.com/system/resources/previews/027/980/395/original/login-icon-vector.jpg" alt="Login" class="icon"></a>
+               <a href="/html/signup.html" title="Sign Up"><img src="https://thumbs.dreamstime.com/b/sign-up-member-icon-elegant-cyan-blue-round-button-sign-up-member-icon-isolated-elegant-cyan-blue-round-button-abstract-99714643.jpg" alt="Sign Up" class="icon"></a>
+               </div>
+               <button id="closePopup">Close</button>
+            </div>
+        </div>
+        </div>
+        <footer class="site-footer" style="background-color: aqua;">
+  <div class="footer-content">
+    <h3>About Us</h3>
+    <p>
+      This website showcases the rich <strong>culture and heritage of India</strong>.<br> It contains information about ancient books like Purana, Itihasas, Quran, Bible, Sikhism, Buddhism, Jainism texts, as well as various festivals, classical dance forms, traditional foods, famous temples, and a calendar displaying important festivals.
+    </p>
+    <h4>Contact Us</h4>
+    <p>Email: info@indiacultureheritage.com</p>
+    <p>Phone: +91 9063622619</p>
+  </div>
+</footer>
+    </body>
+</html>

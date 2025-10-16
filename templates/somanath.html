@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shree Somnath Temple - Details & Transport</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffdfa;
+      color: #2b1914;
+      margin: 0;
+      padding: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .temple-img {
+      display: block;
+      margin: 0 auto 18px;
+      max-width: 340px;
+      border-radius: 14px;
+      box-shadow: 0 3px 15px #eadfc6;
+    }
+    .desc-block {
+      margin-bottom: 26px;
+      line-height: 1.6;
+    }
+    .desc-section {
+      margin-bottom: 16px;
+    }
+    .desc-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #4e270d;
+    }
+    img.static-map {
+      width: 100%;
+      height: 450px;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px #ccc;
+      display: block;
+      margin: 0 auto 24px;
+    }
+    .transport-icons {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+    .transport-icons a {
+      text-decoration: none;
+      color: #50260f;
+      text-align: center;
+      font-size: 0.9rem;
+      width: 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .transport-icons a:hover {
+      transform: translateY(-6px);
+      color: #b36800;
+    }
+    .transport-icons img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 6px;
+    }
+    @media (max-width: 600px) {
+      .transport-icons {
+        gap: 16px;
+      }
+      .transport-icons a {
+        width: 55px;
+        font-size: 0.8rem;
+      }
+      .transport-icons img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Shree Somnath Temple</h1>
+  <img
+    src="images/somnath.jpg"
+    alt="Shree Somnath Temple"
+    class="temple-img"
+  />
+
+  <div class="desc-block">
+    <div class="desc-section">
+      <div class="desc-title">History:</div>
+      <div>
+        Shree Somnath Temple in Gujarat is one of the twelve sacred Jyotirlingas dedicated to Lord Shiva.
+        It is an ancient temple with a history of several millennia, having been destroyed and rebuilt multiple times.
+        The current grand structure was constructed in the 1950s in the Māru-Gurjara architectural style, showcasing intricate carvings and splendid craftsmanship.
+      </div>
+    </div>
+
+    <div class="desc-section">
+      <div class="desc-title">Puja Rituals:</div>
+      <div>
+        Daily worship at Somnath includes multiple aartis like Mangala, Bhog, and Sandhya, with priests performing elaborate rituals.
+        Devotees offer flowers, milk, water, and perform chanting to please Lord Shiva, enveloped by the temple’s deep spiritual atmosphere.
+      </div>
+    </div>
+
+    <div class="desc-section">
+      <div class="desc-title">Festivals Celebrated:</div>
+      <div>
+        Maha Shivaratri is the highlight festival celebrated with great devotion, including night-long prayers and cultural programs.
+        Other notable festivals are Kartik Purnima and Shravan Maas, attracting thousands of pilgrims from across India to the temple.
+      </div>
+    </div>
+  </div>
+
+  <!-- Static Google Map image for Somnath Temple location -->
+  <img
+    src="images/somnath.jpeg"
+    alt="Shree Somnath Temple Location on Map"
+    class="static-map"
+  />
+
+  <!-- Transport Icons -->
+  <div class="transport-icons">
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=Somnath+Temple+Gujarat+India&travelmode=transit"
+      target="_blank"
+      title="Bus and Train"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2991/2991143.png"
+        alt="Bus Train Icon"
+      />
+      Bus/Train
+    </a>
+
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=Somnath+Temple+Gujarat+India&travelmode=driving"
+      target="_blank"
+      title="Drive"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+        alt="Drive Icon"
+      />
+      Drive
+    </a>
+
+    <a
+      href="https://www.google.com/flights?hl=en#flt=AMD-SNR"
+      target="_blank"
+      title="Flight"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2972/2972126.png"
+        alt="Flight Icon"
+      />
+      Flight
+    </a>
+  </div>
+</body>
+</html>
