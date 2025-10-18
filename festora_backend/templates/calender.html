@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yearly Calendar with Hindu Festivals</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="calendar-header">
+    <button id="prevYear">‹ Prev</button>
+    <span id="year"></span>
+    <button id="nextYear">Next ›</button>
+  </div>
+  <div id="yearlyCalendar"></div>
+
+  <!-- Festival Modal Popup -->
+  <div id="festivalModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 id="festName"></h2>
+      <p id="festDesc"></p>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

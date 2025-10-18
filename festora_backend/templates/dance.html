@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dance Forms of India</title>
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      max-width: 100%;
+      margin: 30px auto;
+      padding: 10px;
+      text-align: center;
+      background-color: #faf8f5;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      color: #5a2a27;
+    }
+    .main-description {
+        text-align: left;
+      font-size: 25px;
+      font-family: italic;
+      margin-bottom: 25px;
+      color: #704838;
+      line-height: 1.5;
+      padding: 0 10px;
+    }
+    img.dance-image {
+      width: 50%;
+      max-height: 40%;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: opacity 0.3s ease-in-out;
+    }
+    .description {
+        text-align: left;
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #5c3a2e;
+      min-height: 72px;
+      padding: 0 20px;
+      font-weight: 500;
+    }
+    .icons-container {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      padding: 0 10px;
+    }
+    .icon {
+      cursor: pointer;
+      background: #efebe8;
+      padding: 9px 15px;
+      border-radius: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      user-select: none;
+      font-weight: 600;
+      color: #6b4c3b;
+      font-size: 20px;
+      transition: background-color 0.3s, color 0.3s;
+      white-space: nowrap;
+    }
+    .icon:hover {
+      background-color: #6b4c3b;
+      color: #fff;
+    }
+    .icon.active {
+      background-color: #aa6f39;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dance Forms of India</h1>
+  <img src="images/dance1.jpeg" width="80%" height="50%" aligin="center">
+
+  <p class="main-description">
+    India’s dance forms are an integral expression of its divine culture and diverse heritage. 
+    Through centuries, these dances have preserved stories of gods, nature, traditions, and community life. 
+    Each form reflects the spirituality, folklore, rituals, and vibrancy of India's regions, embodying deep cultural symbolism in every beat and gesture.
+  </p>
+  <p class="main-description">
+    Indian classical dance is a deeply divine and spiritual art form, woven into the cultural and religious fabric of India for thousands of years. 
+    Originally performed as sacred rituals inside temples, these dances serve as offerings to deities, embodying a profound connection between the dancer, the divine, and the audience. 
+    Each movement, hand gesture (mudra), expression, and rhythm is steeped in symbolism, narrating stories from Hindu mythology, cosmic principles, and philosophical teachings.<br>
+
+    These dance forms, such as Bharatanatyam, Kathak, Odissi, Kuchipudi, and Kathakali, are not mere entertainment but sacred conversations with the divine. 
+    Through concepts like bhava (emotion) and rasa (essence), they translate inner spiritual experiences into visual and emotional expressions that engage both performer and spectator in a shared transcendental journey.<br>
+
+    Dancers undergo rigorous training to master intricate techniques that allow them to become vessels of divine energy during performances. 
+    This spiritual embodiment is said to purify the mind and body, akin to a moving meditation or yogic practice. For audiences, witnessing classical dance creates a gateway to spiritual realms, evoking feelings of devotion, reverence, and universal connection.
+
+    Overall, Indian classical dance preserves and expresses the timeless interplay of culture, spirituality, and artistry, linking past traditions to present-day experiences as a vibrant cultural heritage of the divine
+  </p>
+
+  <img class="dance-image" id="danceImage" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Kathakali_performance.jpg" alt="Indian Classical Dance" />
+  <p class="description" id="desc">
+    Dance forms of India reflect the divine culture and rich heritage passed through generations. Each form tells stories through intricate movements, expressions, and rhythms.
+  </p>
+
+  <div class="icons-container" id="icons">
+    <div class="icon active" data-name="Kuchipudi">Kuchipudi</div>
+    <div class="icon" data-name="Bharatanatyam">Bharatanatyam</div>
+    <div class="icon" data-name="Ponung Dance">Ponung Dance</div>
+    <div class="icon" data-name="Matki Dance">Matki Dance</div>
+    <div class="icon" data-name="Chang Lo">Chang Lo</div>
+    <div class="icon" data-name="Manipuri">Manipuri</div>
+    <div class="icon" data-name="Cheraw Dance">Cheraw Dance</div>
+    <div class="icon" data-name="Tripura Dance Styles">Tripura Dance Styles</div>
+    <div class="icon" data-name="Laho Dance">Laho Dance</div>
+    <div class="icon" data-name="Singhi Chham">Singhi Chham</div>
+    <div class="icon" data-name="Bihu Dance">Bihu Dance</div>
+    <div class="icon" data-name="Nati">Nati</div>
+    <div class="icon" data-name="Bhangra">Bhangra</div>
+    <div class="icon" data-name="Gaurika Dance">Gaurika Dance</div>
+    <div class="icon" data-name="Kathak">Kathak</div>
+    <div class="icon" data-name="Ghoomar">Ghoomar</div>
+    <div class="icon" data-name="Panthi Dance">Panthi Dance</div>
+    <div class="icon" data-name="Garba">Garba</div>
+    <div class="icon" data-name="Fudgi">Fudgi</div>
+    <div class="icon" data-name="Lavani">Lavani</div>
+    <div class="icon" data-name="Lambadi">Lambadi</div>
+    <div class="icon" data-name="Yakshagana">Yakshagana</div>
+    <div class="icon" data-name="Kathakali">Kathakali</div>
+  </div>
+
+  <script>
+    const danceData = {
+      "Kuchipudi": {
+        desc: "Kuchipudi, originating from Andhra Pradesh, is known for its fast-paced footwork, fluid body movements, and lively narrative style. Traditionally performed as dance-drama, it brings ancient Hindu scriptures to life with energetic storytelling.Kuchipudi traces its roots to the Sanskrit Natya Shastra, a foundational treatise on the performing arts.The most studied version of the Natya Shastra text consists of about 6000 verses structured into 36 chapters. The text, states Natalia Lidova, describes the theory of Tandava dance (Shiva), the theory of rasa, of bhāva, expression, gestures, acting techniques, basic steps, standing postures – all of which are part of Indian classical dances.Famous Kuchipudi dancers from Andhra Pradesh include the iconic Vempati Chinna Satyam, the acclaimed duo Raja and Radha Reddy, the legendary Yamini Krishnamurti, and the influential Sobha Naidu. Other notable artists like Ananda Shankar Jayant, Vyjayanthi Kashi, and Swapnasundari have also contributed significantly to the development and global popularity of the dance form.",
+        img: "https://srisriuniversity.edu.in/wp-content/uploads/2020/12/ev9.jpg",
+      },
+      "Bharatanatyam": {
+        desc: "Bharatanatyam, one of the oldest classical dances of India, hails from Tamil Nadu. It features precise hand gestures, expressive facial expressions, and intricate footwork narrating Hindu mythological themes and spiritual stories.The theoretical foundations of dance Bharatanatyam are found first in Natya Shastra and later in a Tamil text called Kootha nool taken from Tholkappiyam (250 BCE).The Natya Shastra, attributed to the ancient scholar Bharata, and its first complete compilation is dated to between 500 BCE and 200 CE, but estimates vary between 500 BCE and 500 CE.Famous Bharatanatyam dancers from or strongly associated with Tamil Nadu include Rukmini Devi Arundale, Padma Subrahmanyam, Alarmel Valli, Yamini Krishnamurthy, and Leela Samson. Other prominent figures like Tanjore Balasaraswati, Anita Ratnam, and Priyadarshini Govind are also celebrated for their contributions to the dance form, which is deeply rooted in Tamil culture.",
+        img: "https://3.bp.blogspot.com/-4U3eMLoTsgQ/WFD3zxm0bII/AAAAAAAAuAE/h69CnnW6gGAcbVl92kHhN4JtqaiiRSupACLcB/s1600/bharatha+natyam.JPG"
+      },
+      "Ponung Dance": {
+        desc: "Ponung is a vibrant folk dance of the Apatani tribes of Arunachal Pradesh, performed during festivals to celebrate the harvest and social unity with graceful, rhythmic movements.The history of the Ponung dance is rooted in the Adi tribe of Arunachal Pradesh, serving as an agricultural ritual performed by women to ensure good harvests and community prosperity, led by a Miri who sings epic tales of crop origins and local myths. The dance also acts as a form of entertainment, storytelling, and a way to maintain cultural traditions, with female dancers forming a circle while the Miri, using a sword-like instrument called a Yoksha, leads the rhythmic singing.",
+        img: "https://www.namasteindiatrip.org/wp-content/uploads/2022/12/Ponung-Dance.jpg"
+      },
+      "Matki Dance": {
+        desc: "Matki Dance is a traditional folk dance of Maharashtra where dancers skillfully balance decorated pots (matkis) on their heads while performing to lively beats.Matki dance is generally performed in a circular position. Women balance an earthen pot on their head. They also have a veil on their face.The history of the Matki dance is rooted in the daily lives of women in the Malwa region of Madhya Pradesh, evolving from the necessity of carrying earthen pots, or matkis, for water. This folk tradition became a symbol of women's strength and grace, performed at auspicious occasions like weddings and festivals, with performers balancing pots on their heads while performing intricate, rhythmic movements. The dance, which also features communal aspect where multiple dancers can perform together, symbolizes the celebration of community life and cultural heritage.",
+        img: "https://tse3.mm.bing.net/th/id/OIP.SrCcwkr6BVNSFnloUEVMFQHaFj?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+      },
+      "Chang Lo": {
+        desc: "Chang Lo is a traditional war dance of the Lotha tribe in Nagaland, symbolizing bravery and warrior spirit with energetic moves performed in vibrant attire.Chang Lo is a traditional folk dance of the Chang Naga tribe in Nagaland, originally performed to commemorate victory in war, but is now a central part of the Poanglem festival. The dance features performers in warrior attire and colorful traditional clothing, combining martial symbolism with the celebration of the harvest season and cultural heritage.",
+        img: "https://www.gosahin.com/go/p/b/t/1519422212_Aoling-Festival1.jpg"
+      },
+      "Manipuri": {
+        desc: "The Manipuri dance is gentle and flowing from Manipur, focused on devotional themes often related to Lord Krishna’s life and the Ras Lila, using soft hand gestures and vibrant costumes.Manipuri - INSIGHTS  Manipuri Dance, also known as Jagoi Ras or Manipuri Ras Leela, which is one of India's eight major classical dance forms and features themes of devotion to Radha and Krishna. Other well-known dances include Pung Cholom (the Drum Dance), a vigorous and acrobatic dance performed by men with drums, and Thang-Ta, a martial art dance form that showcases sword and spear techniques.Famous Manipuri dancers include Rajkumar Singhajit Singh, Darshana Jhaveri, the other **Jhaveri Sisters (Nayana, **Ranjana, Suvarna/Suverna), Guru Bipin Singh, Kalavati Devi, Devyani Chalia, and Yumlembam Gambhini Devi. These artists have significantly contributed to the art form through their performances, teaching, and preservation efforts.",
+        img: "https://i0.wp.com/www.e-pao.org/galleries/images/Arts/Ras/2013/Indiclad_1208_3/IndiClad_20131208_3_9.jpg?is-pending-load=1"
+      },
+      "Cheraw Dance": {
+        desc: "Cheraw Dance, also known as Bamboo Dance from Mizoram, involves skillful coordination in stepping in and out of clapping bamboo poles, symbolizing harmony and agility.Cheraw dance is a traditional bamboo dance performed by the Mizo people of Mizoram, India, consisting of mostly six to eight people holding pairs of bamboo staves on another horizontally placed bamboo on the ground.[2] The dance is considered one of the oldest known Mizo dances, with origins possibly dating to the 1st century AD, during the era before the Kuki-Mizo migration into the Chin Hills and later Mizoram.",
+        img: "https://danceask.net/wp-content/uploads/2017/12/CHERAW-DANCE-MIZORAM-900x597.jpg"
+      },
+      "Tripura Dance Styles": {
+        desc: "Tripura’s traditional dances showcase a rich blend of folk and tribal dances celebrating festivals, spirituality, and daily life specific to the region’s indigenous communities.The famous dance styles of Tripura include the Hojagiri, Garia, and Mamita dances. Hojagiri is performed by the Reang community, Garia is celebrated by the Tripuri and Jamatia tribes, and Mamita is a harvest dance of the Tripuri people.Hojagiri dance is one of the famous dances of Tripura. The dance is performed on the occasion of HOJAGIRI Festivals or Laxmi puja, held in the following full moon night of  Durga puja. generally after 3rd day of Dashera. The Goddess Mailuma, (Laxmi) is worshipped with full reverence and devotion on this day.",
+        img: "https://live.staticflickr.com/3104/2695127397_b902760b30_b.jpg"
+      },
+      "Laho Dance": {
+        desc: "Laho Dance of Arunachal Pradesh combines ritualistic and folk elements, performed during important community gatherings for harvest and fertility celebrations.Laho Dance is a group performance in which men and women hold hands, link arms, and sway rhythmically to the recitation of couplets. The steps are graceful yet energetic, demonstrating perfect synchronization and harmony among the dancers.",
+        img: "https://tse4.mm.bing.net/th/id/OIP.zl8E0Z9P7X-coGiYdgW8FwHaD0?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+      },
+      "Singhi Chham": {
+        desc: "Singhi Chham is a popular masked dance from Sikkim depicting the snow lion (Singhi), symbolizing power and protection. It combines drama and dance in colorful costumes.Singhi Chham, also known as Kanchendzonga Dance, is a Sikkim lion dance in which the dancers wear lion costumes to depict the snow lion. It is a Bhutia dance that is supposed to have been introduced in the 18th century by Chador Namgyal, Sikkim's third Chogyal.",
+        img: "https://www.gosahin.com/go/p/j/1576445210_singhi-chham-folk-dance.jpg"
+      },
+      "Bihu Dance": {
+        desc: "Bihu Dance from Assam is an energetic folk dance celebrating the Assamese new year and spring season, featuring rhythmic moves and brisk footwork.The modern form of Bihu dance was derived from the Faat Bihu dance celebrated in Dhakuakhana, Lakhimpur. The performers were called by the Ahom king Rudra Singha in 1694 to dance in the royal arena Rang Ghar. The origin of Faat Bihu can be traced to Sadiya. The word Faat in Deori-Chutia language means to migrate. After the defeat of the Sadiyal Kacharis in Sadiya, the survivors were displaced from Sadiya to different places in the kingdom. A group of these people moved from Sadiya, to Dibrugarh and finally settled down in Harhi Sapori, Dhakuakhana. These people had brought the idols of god and goddess along with them and established a temple now known as Harhi Dewaloi. It was here that the first form of modern Bihu dance was developed.",
+        img: "https://assamtimes.org/sites/default/files/field/image/files/img/13_04_11_Sonapur__Bihu_Expert_Ranjit_Gogoi_and_his_group__9__999399441.jpg"
+      },
+      "Nati": {
+        desc: "Nati, from Himachal Pradesh, is a group folk dance performed during festivals and weddings with graceful steps and vibrant traditional attire.Nati (नाटी) is a traditional folk dance in the Western and Central Hills of the Indian subcontinent. It is primarily native to the states of Himachal Pradesh and Uttarakhand. Nati is traditionally performed in the Kullu, Mandi, Shimla, Sirmaur, Chamba, Kinnaur, Uttarkashi, Dehradun (Jaunsar-Bawar) and Tehri Garhwal districts. Due to high immigration of ethnic paharis in the plainlands, this has been made popular in the plainlands too. Traditionally, locals dance to the beats of percussion instruments called Dhol-Damau. Nati dance is listed in the Guinness Book of World Records as the largest folk dance.",
+        img: "https://www.gosahin.com/go/p/e/1541275219_Sirmour-Nati-Dance2.jpg"
+      },
+      "Bhangra": {
+        desc: "Bhangra is a lively and exuberant folk dance from Punjab, traditionally performed to celebrate harvests and festive occasions with energetic movements and drumbeats.Bhangra (Punjabi: ਭੰਗੜਾ) is a type of traditional folk dance of Punjab area of the Indian subcontinent.[1] According to Manuel (2001), bhangra is especially associated with the vernal Vaisakhi festival, performed during harvest season between April and the first quarter of May.In a typical performance, several dancers execute vigorous kicks, leaps, and bends of the body—often with upraised, thrusting arm or shoulder movements—to the accompaniment of short songs called boliyan and, most significantly, to the beat of a dhol (double-headed drum).",
+        img: "https://tse1.mm.bing.net/th/id/OIP.07xdO0DZgCLk0jirU96lIQHaEB?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+      },
+      "Gaurika Dance": {
+        desc: "Gaurika Dance is a traditional dance of the Bhutia people in Sikkim, performed during local festivals with rhythmic movements and folk tunes. Its existence in ancient times is attested by dance poses in sculptures of the Gaudiya style temple and archaeological sites associated with Hinduism, Buddhism and Jainism and it is mentioned by ancient poets of Bengal.After India's independence from colonial rule, it underwent revival, reconstruction and expansion in the 1980s.It has been reconstructed by Mahua Mukherjee, a Bengali researcher and dancer.",
+        img: "https://www.lifestylefun.net/wp-content/uploads/2022/07/folk-dance-of-west-bengal.jpg"
+      },
+      "Kathak": {
+        desc: "Kathak is a North Indian classical dance famous for rhythmic footwork, swift spins, and expressive storytelling using facial expressions and hand gestures.The most famous dance style in Uttar Pradesh is the classical dance form Kathak, but it also boasts numerous folk dances, including the vibrant folk theater forms of Nautanki and Khyal, and regional celebrations like Charkula Dance. Other significant folk dances include Raslila and Ramlila, which are theatrical portrayals of the stories of Lord Krishna and Lord Rama, respectively.Famous Kathak dancers and gurus from Uttar Pradesh include stalwarts of the Lucknow Gharana like Pandit Birju Maharaj, Shambhu Maharaj, Lachhu Maharaj, and Acchan Maharaj, as well as pioneers of the Benaras Gharana such as Janaki Prasad. Other influential figures with connections to Uttar Pradesh's Kathak tradition are Ishwari Prasad and, more recently, the dancers trained by these masters.",
+        img: "https://www.discoveryacton.org/sites/default/files/styles/scaled_original_wide/public/images/04.%20Youth%20Ensemble%20Photoshoot_LizaVoll%20(1)_0.jpg?itok=RyiZgd4Z"
+      },
+      "Ghoomar": {
+        desc: "Ghoomar is a traditional folk dance of Rajasthan performed by women in swirling skirts celebrating festive occasions with graceful rotations and rhythmic claps.Ghoomar is of Bhil tribe performed to worship goddess Sarasvati which was later embraced by other Rajasthani communities. Bheels were a strong community at that time and were in constant war with Rajput kings. After much fighting peace was made and they began interacting with each other. Ghoomar was performed at Rajputana by local women, later on Rajput elite women also started participating in the dance. Men were not allowed at these dance performances. Ghoomar became popular in the Indian state of Rajasthan during the reigns of Rajput kings, and is typically performed by women during auspicious occasions.",
+        img: "https://tse4.mm.bing.net/th/id/OIP.16hR5Go1eHa0qO57oWVCgAHaD4?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+      },
+      "Panthi Dance": {
+        desc: "Panthi Dance from Chhattisgarh is a vibrant tribal dance performed with energetic movements to please the deity of Satnami sects, symbolizing justice and valor.Panthi dance originated in Chhattisgarh among the Satnami community, a spiritual movement founded by Guru Ghasidas in the early 19th century. This devotional and ritualistic dance expresses devotion to the one formless God, or Satnam, and celebrates the teachings of Guru Ghasidas, promoting social equality and community unity. Performed with rhythmic beats of the Mandar drum and Jhanjh cymbals, it is primarily held during the birth anniversary of Guru Ghasidas (Maghi Purnima) and other community events.Panthi dance originated in Chhattisgarh among the Satnami community, a spiritual movement founded by Guru Ghasidas in the early 19th century. This devotional and ritualistic dance expresses devotion to the one formless God, or Satnam, and celebrates the teachings of Guru Ghasidas, promoting social equality and community unity. Performed with rhythmic beats of the Mandar drum and Jhanjh cymbals, it is primarily held during the birth anniversary of Guru Ghasidas (Maghi Purnima) and other community events.",
+        img: "https://cdn.testbook.com/1697702004840-Panthi%20dance%20of%20chhattisgarh.jpg/1697702006.jpeg"
+      },
+      "Garba": {
+        desc: "Garba is a folk dance from Gujarat performed in circular movements around a lamp or statue symbolizing life and energy during the Navratri festival.Garba is a form of Circle dance and Social dance form originating in Gujarat, and played across the Gujarati diaspora worldwide.[1] Garba is traditionally danced as part of the annual Hindu festival of Navratri (or Nine Nights), held in celebration of Amba Mata, or the primordial mother. Typically, at the end of each Navratri night of dance, the community also plays raas, a sibling circle-dance form, in which players hold a stick in each hand and tap out a rhythm with a partner. Everyone is invited to join garba and raas, and people of all ages dance together. Traditionally garba is played around an earthen pot with holes on the sides, revealing a flame inside (a symbol of the jiva or soul inside the womb). ",
+        img: "https://gumlet.assettype.com/freepressjournal/2022-09/b608a1df-d577-477a-9ba6-47048692556f/Navratri_gujarat_tourism.jpg"
+      },
+      "Fudgi": {
+        desc: "Fudgi Dance is a traditional dance from Ladakh that features flowing hand gestures and delicate movements, highlighting Ladakhi culture and rituals.Fugdi is a folk dance performed by the womenfolk of some communities of Konkanies in the Konkan coastal region of Goa and Maharashtra states during the Hindu religious festivals like Ganesh Chaturthi and Vrata or towards the end of other dances like Dhalo. According to certain historical facts, this dance style is said to have been created from few ancient Goan traditions. In addition, this dance is mainly performed during the Hindu month of Bhadrapada, when women usually take a break to escape boredom arising from their daily routines. Furthermore, it is also performed during religious and social events.In addition to being a dance form, fugdi is sometimes done as a competitive event (such as in the Chhattisgarhiya Olympics), in which case the participant who can last the longest while performing the fugdi dance wins.",
+        img: "https://goanvillage.com/wp-content/uploads/2023/01/FUGDI-AND-DHALO-1024x576.jpg"
+      },
+      "Lavani": {
+        desc: "Lavani is a traditional Marathi dance expressing powerful emotions and storytelling through fast-paced footwork, performed mostly by women with vibrant attire.Lavani is a genre of music popular in Maharashtra, India.[1] Lavani is a combination of traditional song and dance, which particularly performed to the beats of Dholki, a percussion instrument. Lavani is noted for its powerful rhythm. Lavani has contributed substantially to the development of Marathi folk theatre.[2] In Maharashtra and southern Madhya Pradesh it is performed by the female performers wearing nine-yard long sarees also called Lugade saree. The songs are sung in a quick tempo.",
+        img: "https://www.gosahin.com/go/p/i/t1/1564228350_lavani-dance-2.jpg"
+      },
+      "Lambadi": {
+        desc: "Lambadi Dance is performed by the Lambadi tribal women of Telangana, showcasing colorful costumes and energetic group movements during celebrations.Lambadi dance is a traditional folk dance form that originated among the Lambadi community in the southern parts of India. Also known as Banjara dance or Banjari dance, it is a lively and colorful dance that is often performed on special occasions and festivals.",
+        img: "https://c2.staticflickr.com/6/5229/5550416936_8a3403378f_b.jpg"
+      },
+      "Yakshagana": {
+        desc: "Yakshagana is a folk theatre and dance form from Karnataka combining dance, music, dialogue, and elaborate costumes to depict stories from epics.Yakshagana can refer to a style of writing, as well as the written material itself. It was probably used for poems enacted in bayalaata (or open theatre drama), such as the ballads of Koti and Chennayya. Yakshagana in its present form is believed to have been strongly influenced by the Vaishnava Bhakti movement. Yakshagana was first introduced in Udupi in Tulu during 12th century by Madhvacharya's disciple Naraharitirtha. Naraharitirtha was the minister in the Kalinga Kingdom. He also was the founder of Kuchipudi.The first written evidence regarding Yakshagana is found on an inscription at the Lakshminarayana Temple in Kurugodu, Somasamudra, Bellary District, and is dated 1556 CE. A copy is available at the University of Madras.famous Yakshagana artists from Karnataka include Keremane Shivarama Hegde, founder of the Idagunji Mahaganapathi Yakshagana Mandali, and Sheny Gopalakrishna Bhat. Other notable figures are B. N. Nanjunda Rao, N. L. Narasimhachar, and T. K. Lakshminarayana. More recently, Dr. Manorama B.N. is recognized as a scholar and artist in the field, while Tulasi Raghavendra from Uttara Kannada was recognized as the youngest performer for her prodigious talent.",
+        img: "https://i.pinimg.com/originals/95/d7/b7/95d7b7d22fbd091f5edaa7ae581203d9.jpg"
+      },
+      "Kathakali": {
+        desc: "Kathakali, from Kerala, is a dramatic dance-drama distinguished by elaborate costumes, vibrant makeup, and expressive gestures retelling epics like Ramayana and Mahabharata.The most famous traditional dance form of Kerala is Kathakali, a classical dance-drama known for its elaborate costumes, vibrant makeup, and expressive eye and hand gestures that depict mythological stories. Other notable dance forms include Mohiniyattam, a graceful solo women's dance, and Thiruvathirakali, a popular group dance performed by women during festivals.Famous Kathakali dancers from Kerala include the legendary Kalamandalam Gopi, Kalamandalam Ramankutty Nair, Kottakkal Sivaraman, and Chavara Parukutty Amma, known for their mastery of the art form. Other renowned artists include Guru Gopinath, who helped popularize Kathakali internationally, and Madavoor Vasudevan Nair.",
+        img: "https://kerala.me/wp-content/uploads/2015/11/Kathakali.jpg"
+      }
+    };
+
+    const descElement = document.getElementById('desc');
+    const danceImage = document.getElementById('danceImage');
+    const icons = document.querySelectorAll('.icon');
+
+    function setActiveIcon(icon) {
+      icons.forEach(i => i.classList.remove('active'));
+      icon.classList.add('active');
+    }
+
+    icons.forEach(icon => {
+      icon.addEventListener('click', () => {
+        const danceName = icon.getAttribute('data-name');
+        const data = danceData[danceName];
+
+        if (data) {
+          descElement.textContent = data.desc;
+          danceImage.src = data.img;
+          danceImage.alt = danceName + " Dance";
+        } else {
+          descElement.textContent = "";
+          danceImage.src = "";
+          danceImage.alt = "";
+        }
+        setActiveIcon(icon);
+      });
+    });
+
+    // Initialize page with first dance data
+    (function init() {
+      const firstDance = icons[0].getAttribute('data-name');
+      const firstData = danceData[firstDance];
+      if (firstData) {
+        descElement.textContent = firstData.desc;
+        danceImage.src = firstData.img;
+        danceImage.alt = firstDance + " Dance";
+      }
+    })();
+  </script>
+</body>
+</html>
