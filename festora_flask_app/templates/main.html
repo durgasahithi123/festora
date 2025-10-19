@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Heritage and Culture</title>
+    <style>
+        /* ===================================== */
+        /* == 1. GENERAL PAGE & LAYOUT STYLES == */
+        /* ===================================== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Georgia', serif;
+            color: #444;
+            padding-top: 10px;
+        }
+
+        /* Navigation Bar */
+        nav ul {
+            background-color: #f0f8ff; /* Light blue/beige */
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav li {
+            padding: 15px 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #009688; /* Teal hover color */
+        }
+
+        .topnav {
+            display: flex;
+            margin-left: auto;
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 1600px;
+            width: 90%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            margin: 20px auto;
+        }
+
+        .mySlides { display: none; }
+        .mySlides img { 
+            width: 100%; 
+            height: 570px; 
+            object-fit: cover; 
+            display: block; /* Important for removing small space below image */
+        } 
+        
+        /* Slideshow Buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 14px;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.6);
+            user-select: none;
+            transition: background 0.3s;
+        }
+        .prev:hover, .next:hover { background: rgba(0,0,0,0.8); }
+        .next { right: 10px; }
+        .prev { left: 10px; }
+
+        /* Content Containers */
+        .festivemonth { 
+            text-align: left; 
+            font-family: 'Arial', sans-serif; 
+            padding: 0 5%; 
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 90%;
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .container:nth-child(even) {
+            flex-direction: row-reverse; /* Alternate image/text position */
+        }
+
+        .container img {
+            max-width: 300px;
+            border-radius: 8px;
+            object-fit: cover;
+            height: 200px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .container:nth-child(even) img {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        .container div { flex-grow: 1; }
+        .container h3 { margin: 0 0 10px 0; color: #009688; }
+        .container p { margin: 0; font-size: 15px; line-height: 1.6; }
+        .container a { 
+            display: inline-block; 
+            margin-top: 10px; 
+            color: #009688; 
+            text-decoration: none; 
+            font-weight: 600;
+        }
+        .container a:hover { text-decoration: underline; }
+
+        /* Footer */
+        .site-footer {
+            background-color: #e0f7fa; /* Lighter aqua */
+            padding: 30px 0;
+            margin-top: 30px;
+            color: #333;
+            border-top: 3px solid #009688;
+        }
+
+        .footer-content {
+            max-width: 90%;
+            margin: auto;
+            padding: 0 20px;
+        }
+        
+        /* ===================================== */
+        /* ========= 2. MODAL STYLES ========= */
+        /* ===================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* Show Modal */
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 420px;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+            color: #888;
+            line-height: 1;
+        }
+        .close-btn:hover { color: #333; }
+
+        /* Tabs */
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #ddd;
+        }
+
+        .tab-btn {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            color: #009688;
+            border-bottom-color: #009688;
+        }
+
+        /* Forms */
+        .auth-form h2 {
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .auth-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #009688;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #00796b;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #009688;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        /* Social Login */
+        .social-login {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px dashed #ccc;
+            text-align: center;
+        }
+
+        .social-login p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .social-btn {
+            width: 48%;
+            padding: 10px;
+            margin: 5px 1%;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: white;
+            transition: background-color 0.2s;
+        }
+
+        .social-btn:hover {
+            background-color: #eee;
+        }
+
+        .google-btn { color: #db4437; }
+        .facebook-btn { color: #4267b2; }
+    </style>
+</head>
+<body>
+    <h1>Celebrating India's Heritage - From Temples to Traditions</h1>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('view.main_view') }}">Home</a></li>
+            <li><a href="{{ url_for('view.calender_view') }}">Calendar</a></li>
+            <li><a href="{{ url_for('view.books_view') }}">Books</a></li>
+            <div class="topnav">
+                <li><a id="navLoginBtn" style="cursor:pointer;">Login</a></li>
+                <li><a id="navSignupBtn" style="cursor:pointer;">Signup</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <a href="/html/temples.html"><img src="{{ url_for('static', filename='images/temples.jpeg') }}" alt="Temple"></a> 
+        </div>
+        <div class="mySlides">
+            <a href="/html/dance.html"><img src="{{ url_for('static', filename='images/dance (2).jpeg') }}" alt="Dance"></a>
+        </div>
+        <div class="mySlides">
+            <a href="/html/festivals.html"><img src="{{ url_for('static', filename='images/festivals.jpeg') }}" alt="Festival"></a> 
+        </div>
+        <div class="mySlides">
+            <a href="/html/food.html"><img src="{{ url_for('static', filename='images/food.jpeg') }}" alt="Food"></a> 
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <hr>
+
+    <h1 class="festivemonth">Festival of the Month</h1>
+
+    <div class="container">
+        <div>
+            <h3>Onam (August 26 – September 5, 2025; Thiruvonam: September 5)</h3>
+            <p>Onam is Kerala’s grand harvest festival celebrated over ten days, culminating on Thiruvonam. 
+            Families welcome the legendary King Mahabali with vibrant floral rangoli (Pookalam), grand feasts (Onasadya), traditional games, and cultural dances. 
+            The festival highlights unity, joy, and prosperity across the state, with the main festivities falling on September 5.
+            </p>
+            <a href="{{ url_for('view.onam_page') }}">Read More &raquo;</a>
+        </div>
+        <a href="{{ url_for('view.onam_page') }}"><img src="{{ url_for('static', filename='images/onam.jpg') }}" alt="Onam Festival"></a> 
+    </div>
+
+    <div class="container">
+        <a href="{{ url_for('view.ganeshvisarjan_page') }}"><img src="{{ url_for('static', filename='images/ganesh.jpg') }}" alt="Ganesh Visarjan"></a> 
+        <div>
+            <h3>Ganesh Visarjan (September 6, 2025)</h3>
+            <p>Ganesh Visarjan marks the farewell of Lord Ganesha at the end of Ganesh Chaturthi. 
+            Devotees immerse Ganesha idols in rivers, lakes, or seas with singing and dancing processions, symbolizing gratitude and the cycle of creation and dissolution.</p>
+            <a href="{{ url_for('view.ganeshvisarjan_page') }}">Read More &raquo;</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+            <h3>Shardiya Navratri (Beginning September 22, 2025)</h3>
+            <p>Shardiya Navratri is a nine-day festival dedicated to Goddess Durga. 
+            It starts with Ghatasthapana and features fasting, prayers, and dance, culminating in Durga Ashtami and Sandhi Puja. 
+            The festival symbolizes the victory of good over evil and is celebrated with devotion and community gatherings.</p>
+            <a href="{{ url_for('view.navaratri_page') }}">Read More &raquo;</a>
+        </div>
+        <a href="{{ url_for('view.navaratri_page') }}"><img src="{{ url_for('static', filename='images/navaratri.jpg') }}" alt="Navratri Festival"></a> 
+    </div>
+
+    <hr>
+
+  <!--  <div id="festivals-container"></div>  /api/festivals temporary removed -->
+
+
+    <h1 class="festivemonth">Featured Books</h1>
+    <div id="books-container">
+        </div>
+    <hr>
+
+    <h1 class="festivemonth">Famous Temples</h1>
+    <div id="temples-container">
+        </div>
+    <hr>
+
+    <h1 class="festivemonth">Traditional Foods</h1>
+    <div id="foods-container">
+        </div>
+    <hr>
+
+
+    <div id="authModal" class="modal-overlay">
+        <div class="modal-content">
+          <div id="authMessage" class="auth-message"></div>
+
+            <button id="closeModal" class="close-btn" aria-label="Close Authentication Dialog">❌</button>
+
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-form="login">🔑 Log In</button>
+                <button class="tab-btn" data-form="signup">✍️ Sign Up</button>
+            </div>
+
+            <div class="auth-forms-container">
+
+                <form id="loginForm" class="auth-form active-form" action="{{ url_for('auth.login') }}" method="POST">
+                    <h2>Welcome Back!</h2>
+                    <label for="loginEmail">📧 Email:</label>
+                    <input type="email" id="loginEmail" name="email" required autocomplete="email">
+
+                    <label for="loginPassword">🔒 Password:</label>
+                    <input type="password" id="loginPassword" name="password" required autocomplete="current-password">
+
+                    <button type="submit" class="submit-btn">🚀 Log In</button>
+                    <a href="#" class="forgot-password">❓ Forgot Password?</a>
+                </form>
+
+                <form id="signupForm" class="auth-form" action="{{ url_for('auth.signup') }}" method="POST" style="display:none;">
+                    <h2>Join Our Community!</h2>
+                    <label for="signupUsername">👤 Username:</label>
+                    <input type="text" id="signupUsername" name="name" required autocomplete="username">
+
+                    <label for="signupEmail">📧 Email:</label>
+                    <input type="email" id="signupEmail" name="email" required autocomplete="email">
+
+                    <label for="signupPassword">🔒 Password:</label>
+                    <input type="password" id="signupPassword" name="password" required autocomplete="new-password">
+
+                    <button type="submit" class="submit-btn">✅ Sign Up</button>
+                </form>
+
+            </div>
+
+            <div class="social-login">
+                <p>Or continue with:</p>
+                <button class="social-btn google-btn">G Google</button>
+                <button class="social-btn facebook-btn">f Facebook</button>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <h3>About Us</h3>
+            <p>
+                This website showcases the rich <strong>culture and heritage of India</strong>. It contains information about ancient books like Purana, Itihasas, Quran, Bible, Sikhism, Buddhism, Jainism texts, as well as various festivals, classical dance forms, traditional foods, famous temples, and a calendar displaying important festivals.
+            </p>
+            <h4>Contact Us</h4>
+            <p>Email: info@indiacultureheritage.com</p>
+            <p>Phone: +91 9063622619</p>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        let autoSlide;
+        
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+
+            if (n !== undefined) {
+              slideIndex = slideIndex + n;
+            }
+
+            if (slideIndex >= slides.length) { slideIndex = 0 }
+            if (slideIndex < 0) { slideIndex = slides.length - 1 }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex].style.display = "block";
+        }
+        
+        function plusSlides(n) {
+            clearInterval(autoSlide);
+            slideIndex += n;
+            showSlides();
+            // Restart the auto-slide timer after a manual click
+            autoSlide = setInterval(() => showSlides(1), 4000); 
+        }
+
+        // Initialize Slideshow and Auto-slide
+        showSlides();
+        autoSlide = setInterval(() => showSlides(1), 4000);
+    </script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- DOM Elements ---
+    const modal = document.getElementById('authModal');
+    const closeBtn = document.getElementById('closeModal');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const messageArea = document.getElementById('authMessage');
+    const navLoginLink = document.getElementById('navLoginBtn');
+    const navSignupLink = document.getElementById('navSignupBtn');
+    const topNavContainer = document.querySelector('.topnav'); // The container for nav buttons
+
+    // --- API URLs ---
+    const API_BASE_URL = 'http://127.0.0.1:5000/api';
+
+    // --- 🚀 NEW: Dynamic Content Loading Functions ---
+
+    const loadFestivals = async () => {
+        const container = document.getElementById('festivals-container');
+        try {
+            const response = await fetch(`${API_BASE_URL}/festivals`);
+            const festivals = await response.json();
+            container.innerHTML = ''; 
+            festivals.forEach((item, index) => {
+                // Alternate layout for even/odd items
+                const isReversed = index % 2 !== 0 ? 'style="flex-direction: row-reverse;"' : '';
+                container.innerHTML += `
+                    <div class="container" ${isReversed}>
+                        <div>
+                            <h3>${item.name} (${item.date})</h3>
+                            <p>${item.description}</p>
+                            <a href="#">Read More &raquo;</a>
+                        </div>
+                        <a href="#"><img src="/static/images/${item.image_url}" alt="${item.name}"></a> 
+                    </div>`;
+            });
+        } catch (error) { 
+            console.error('Failed to load festivals:', error);
+            container.innerHTML = '<p class="error-message">Could not load festival data.</p>';
+        }
+    };
+
+    const loadBooks = async () => {
+        const container = document.getElementById('books-container');
+        try {
+            const response = await fetch(`${API_BASE_URL}/books`);
+            const books = await response.json();
+            container.innerHTML = '';
+            books.forEach((item, index) => {
+                const isReversed = index % 2 !== 0 ? 'style="flex-direction: row-reverse;"' : '';
+                container.innerHTML += `
+                    <div class="container" ${isReversed}>
+                        <div>
+                            <h3>${item.title}</h3>
+                            <p><b>Author:</b> ${item.author || 'N/A'} | <b>Religion:</b> ${item.religion}</p>
+                            <p>${item.description}</p>
+                            <a href="#">Read More &raquo;</a>
+                        </div>
+                        <a href="#"><img src="${item.image_url}" alt="${item.title}" style="height: 250px;"></a>
+                    </div>`;
+            });
+        } catch (error) { 
+            console.error('Failed to load books:', error); 
+            container.innerHTML = '<p class="error-message">Could not load book data.</p>';
+        }
+    };
+
+    const loadTemples = async () => {
+        const container = document.getElementById('temples-container');
+        try {
+            const response = await fetch(`${API_BASE_URL}/temples`);
+            const temples = await response.json();
+            container.innerHTML = '';
+            temples.forEach((item, index) => {
+                const isReversed = index % 2 !== 0 ? 'style="flex-direction: row-reverse;"' : '';
+                container.innerHTML += `
+                    <div class="container" ${isReversed}>
+                        <div>
+                            <h3>${item.name}</h3>
+                            <p><b>Location:</b> ${item.location}</p>
+                            <p>${item.description}</p>
+                            <a href="#">Read More &raquo;</a>
+                        </div>
+                        <a href="#"><img src="${item.image_url}" alt="${item.name}"></a> 
+                    </div>`;
+            });
+        } catch (error) { 
+            console.error('Failed to load temples:', error);
+            container.innerHTML = '<p class="error-message">Could not load temple data.</p>';
+        }
+    };
+
+    const loadFoods = async () => {
+        const container = document.getElementById('foods-container');
+        try {
+            const response = await fetch(`${API_BASE_URL}/foods`);
+            const foods = await response.json();
+            container.innerHTML = '';
+            foods.forEach((item, index) => {
+                const isReversed = index % 2 !== 0 ? 'style="flex-direction: row-reverse;"' : '';
+                container.innerHTML += `
+                    <div class="container" ${isReversed}>
+                        <div>
+                            <h3>${item.name}</h3>
+                            <p><b>Region:</b> ${item.region}</p>
+                            <p>${item.description}</p>
+                            <a href="#">Read More &raquo;</a>
+                        </div>
+                        <a href="#"><img src="${item.image_url}" alt="${item.name}"></a> 
+                    </div>`;
+            });
+        } catch (error) { 
+            console.error('Failed to load foods:', error);
+            container.innerHTML = '<p class="error-message">Could not load food data.</p>';
+        }
+    };
+    // --- Helper Functions ---
+    const displayMessage = (message, type = 'success') => {
+        messageArea.textContent = message;
+        messageArea.className = `auth-message ${type}`;
+    };
+
+    // --- UI Update Functions ---
+    const updateNavUI = (isLoggedIn, user = null) => {
+        topNavContainer.innerHTML = ''; // Clear existing buttons
+
+        if (isLoggedIn) {
+            // User is logged in: Show welcome message and Logout button
+            const welcomeText = document.createElement('li');
+            welcomeText.innerHTML = `<a>Welcome, ${user.name}!</a>`;
+
+            const logoutLink = document.createElement('li');
+            logoutLink.innerHTML = `<a id="navLogoutBtn" style="cursor:pointer;">Logout</a>`;
+            
+            topNavContainer.appendChild(welcomeText);
+            topNavContainer.appendChild(logoutLink);
+
+            // Add event listener to the new logout button
+            document.getElementById('navLogoutBtn').addEventListener('click', handleLogout);
+        } else {
+            // User is logged out: Show Login and Signup buttons
+            const loginLink = document.createElement('li');
+            loginLink.innerHTML = `<a id="navLoginBtn" style="cursor:pointer;">Login</a>`;
+
+            const signupLink = document.createElement('li');
+            signupLink.innerHTML = `<a id="navSignupBtn" style="cursor:pointer;">Signup</a>`;
+
+            topNavContainer.appendChild(loginLink);
+            topNavContainer.appendChild(signupLink);
+
+            // Re-add event listeners for login/signup
+            document.getElementById('navLoginBtn').addEventListener('click', () => openAuthModal('login'));
+            document.getElementById('navSignupBtn').addEventListener('click', () => openAuthModal('signup'));
+        }
+    };
+
+    const showForm = (formType) => {
+        tabButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-form') === formType) {
+                btn.classList.add('active');
+            }
+        });
+
+        displayMessage('');
+        if (formType === 'login') {
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        } else {
+            signupForm.style.display = 'block';
+            loginForm.style.display = 'none';
+        }
+    };
+
+    const openAuthModal = (formType = 'login') => {
+        showForm(formType);
+        modal.classList.add('open');
+    };
+
+    const closeAuthModal = () => {
+        modal.classList.remove('open');
+        displayMessage('');
+    };
+
+    // --- API Handlers ---
+    const handleLogout = async () => {
+        await fetch(`${API_BASE_URL}/logout`, { method: 'POST' });
+        updateNavUI(false); // Update UI to logged-out state
+        // Optional: Reload the page for a clean state
+        window.location.reload(); 
+    };
+
+    const handleSubmit = async (event, endpoint) => {
+        event.preventDefault();
+        displayMessage('Processing...', 'info');
+
+        const form = event.target;
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData);
+
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                displayMessage(data.message, 'success');
+                
+                if (endpoint.includes('login')) {
+                    // --- 🚀 CHANGE 1: After successful login, update the nav bar ---
+                    updateNavUI(true, data.user); 
+                    setTimeout(closeAuthModal, 1500);
+                } else if (endpoint.includes('signup')) {
+                    // --- 🚀 CHANGE 2: After successful signup, switch to the login form ---
+                    setTimeout(() => {
+                        displayMessage('Signup successful! Please log in.', 'success');
+                        showForm('login');
+                    }, 1500);
+                }
+            } else {
+                displayMessage(`Error: ${data.error || 'Something went wrong.'}`, 'error');
+            }
+        } catch (error) {
+            console.error('Network Error:', error);
+            displayMessage('Network error. Could not connect to the server.', 'error');
+        }
+    };
+
+    const checkLoginStatus = async () => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/status`);
+            if (response.ok) {
+                const data = await response.json();
+                if (data.isLoggedIn) {
+                    updateNavUI(true, data.user);
+                }
+            }
+        } catch (error) {
+            console.log('Server not reachable. User is not logged in.');
+        }
+    };
+
+    // --- Event Listeners Initialization ---
+    navLoginLink.addEventListener('click', () => openAuthModal('login'));
+    navSignupLink.addEventListener('click', () => openAuthModal('signup'));
+    closeBtn.addEventListener('click', closeAuthModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeAuthModal();
+    });
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => showForm(btn.getAttribute('data-form')));
+    });
+
+    // We change the `action` attribute in the HTML to a `data-endpoint` to avoid confusion.
+    // Or we can construct the endpoint URL here directly.
+    loginForm.addEventListener('submit', (e) => handleSubmit(e, `${API_BASE_URL}/login`));
+    signupForm.addEventListener('submit', (e) => handleSubmit(e, `${API_BASE_URL}/signup`));
+
+    // --- Initial Page Load ---
+    checkLoginStatus(); // Check if the user is already logged in when the page loads
+    loadFestivals();
+    loadBooks();
+    loadTemples();
+    loadFoods();
+
+    setTimeout(() => {
+    // Check if user is not logged in (by checking if modal exists and login button visible)
+    const isLoggedIn = !document.getElementById('navLoginBtn') && !document.getElementById('navSignupBtn');
+    if (!isLoggedIn) {
+        openAuthModal('login');
+    }
+}, 2000);
+});
+</script>
+</body>
+</html>
